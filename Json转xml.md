@@ -6,6 +6,58 @@
 
 想了一下，换个方式 json字符串-->Map -->xml 
 
+### 标准
+
+1. json节点直接是 key:string 直接转为 <key>string</key>
+2. json节点为 key:map,以key为根节点，再根据map中数据类型处理
+3. json节点为 key:array<map> 以key为节点，每个map一个节点，再处理map里的数据
+4. json节点为 key:array<string>  以key为节点,按，分隔数组数据为节点值
+
+```json
+
+{
+	"name": "zhang", // --> <name>zhang</name>
+	"sex": 1,        // --> <sex>1</sex>
+	"mapData": {     // --> <mapData><AAA>aaa</AAA><BBB>bbb</BBB></mapData>
+		"AAA": "aaa",
+		"BBB": "bbb"
+	},
+	"listData": [   // --> <listData><key00>0:0</key00><key10>1:0</key10></listData><listData><key01>0:1</key01><key11>1:1</key11></listData>
+		{
+			"key00": "0:0",
+			"key10": "1:0"
+		},
+		{
+			"key01": "0:1",
+			"key11": "1:1"
+		},
+		{
+			"listandlist": [
+				{
+					"key00": "0:0",
+					"key10": "1:0"
+				},
+				{
+					"key01": "0:1",
+					"key11": "1:1"
+				}
+			]
+		}
+	],
+	"listData2": [  // --> <listData2>0,1,2,3</listData2>
+		"0",
+		"1",
+		"2",
+		"3"
+	]
+}
+				
+
+
+```
+
+### 代码Demo
+
 ```java
 
 import java.io.BufferedReader;
