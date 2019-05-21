@@ -6,7 +6,8 @@
 
 想了一下，换个方式 json字符串-->Map -->xml 
 
-(```)
+```java
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -131,6 +132,5 @@ public class Json2xml {
     }
 
 }
-
-(```)
+```
 
