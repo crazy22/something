@@ -13,7 +13,7 @@
 3. json节点为 key:array<map> 以key为节点，每个map一个节点，再处理map里的数据
 4. json节点为 key:array<string>  以key为节点,按，分隔数组数据为节点值
 
-```json
+```
 
 {
 	"name": "zhang", // --> <name>zhang</name>
