@@ -11,7 +11,7 @@
 1. json节点直接是 key:string 直接转为 <key>string</key>
 2. json节点为 key:map,以key为根节点，再根据map中数据类型处理
 3. json节点为 key:array_map 以key为节点，每个map一个节点，再处理map里的数据
-4. json节点为 key:array_string  以key为节点,按，分隔数组数据为节点值
+4. json节点为 key:array_string  以key为节点,按"，"分隔数组数据为节点值
 
 ```
 
